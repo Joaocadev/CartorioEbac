@@ -121,57 +121,77 @@ int main()//Função
 	
 	int laco=1;
 	
-	for(laco=1;laco=1;)
+	char senhadigitada[10]="a"; //Variável para incluir senha de acesso
+	
+	int comparacao;
+	
+	setlocale(LC_ALL, "Portuguese");
+	
+	printf("Cartório da EBAC\n\n");
+	printf("Login de Administrador!\n\n"); //Campo para usuário digitar senha de acesso
+	printf("Digite a senha de acesso: ");
+	scanf("%s",senhadigitada);
+	comparacao = strcmp(senhadigitada, "admin");
+	
+	if(comparacao == 0)
 	{
 	
-	   system("cls"); //Comando para deletar a tela
+	
+	   for(laco=1;laco=1;)
+	   {
+	
+	       system("cls"); //Comando para deletar a tela
 	   
-	   setlocale(LC_ALL, "Portuguese");//Definindo a linguaguem
+	       setlocale(LC_ALL, "Portuguese");//Definindo a linguaguem
 	
-	   printf("Cartório da EBAC\n\n");
-//Tela de início	
-	   printf("Olá! Seja bem-vindo ao Cartório da EBAC!\n\n");
-	   printf("Para continuar, escolha uma das opções abaixo.\n\n");
-//Menu de escolhas
-	   printf("\t1 - Registrar nomes\n");
-	   printf("\t2 - Consultar nomes\n");
-	   printf("\t3 - Deletar nomes\n");
-	   printf("\t4 - Sair do sistema\n\n");
-	   printf("Opção: ");
+	       printf("Cartório da EBAC\n\n");
+           //Tela de início	
+	       printf("Olá! Seja bem-vindo ao Cartório da EBAC!\n\n");
+	       printf("Para continuar, escolha uma das opções abaixo.\n\n");
+           //Menu de escolhas
+	       printf("\t1 - Registrar nomes\n");
+	       printf("\t2 - Consultar nomes\n");
+	       printf("\t3 - Deletar nomes\n");
+	       printf("\t4 - Sair do sistema\n\n");
+	       printf("Opção: ");
 	
-		//scanf = scanear a opção que o usuário colocar
-		scanf("%d", &opcao); //Armazenando a escolha do usuário
+		   //scanf = scanear a opção que o usuário colocar
+		   scanf("%d", &opcao); //Armazenando a escolha do usuário
 		
-		//O sistema deleta todas as mensagens anteriores
-		system("cls");
+		   //O sistema deleta todas as mensagens anteriores
+		   system("cls");
 		
-		switch(opcao)//Seleção disponível para o usuário
-		{
-			case 1: //Chamada de funções
-			registro();
-			break;
+		   switch(opcao)//Seleção disponível para o usuário
+		   {
+  			    case 1: //Chamada de funções
+  			    registro();
+  			    break;
 			
-			case 2:
-			consultar();
-			break;
+  			    case 2:
+		    	consultar();
+    			break;
 			
-			case 3:
-			deletar();
-			break;
+    			case 3:
+     			deletar();
+    			break;
 			
-			case 4:
-			printf("Obrigado por acessar o sistema!\n");
-			return 0;
-			break;	
+    			case 4:
+    			printf("Obrigado por acessar o sistema!\n");
+    			return 0;
+    			break;	
 			
-			default:
-			printf("Opção inválida.\n");
-			system("pause");
-			break;
-			//Fim da seleção
-		}
-		
+    			default:
+    			printf("Opção inválida.\n");
+    			system("pause");
+    			break;
+    			//Fim da seleção
+		    }
+	    }
 	}
+	
+	else 
+	    printf("\nSenha incorreta.\n\n");
+	    
 	printf("Este software é de uso exclusivo de João Carlos Pereira Alves\n");
 	
 }
